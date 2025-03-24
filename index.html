@@ -5,9 +5,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lieblingsorte der Webmapper:innen</title>
+    <link rel="shortcut icon" href="images/user.jpg" type="image/x-icon">
+    <link <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />>
+    <link rel="stylesheet" href="main.css">
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
     <!-- Make sure you put this AFTER Leaflet's CSS -->
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+    <script defer src="main.js"></script>
 </head>
 
 <body>
@@ -29,38 +33,27 @@
             <figure>
                 <img src="images/attraction.jpg" alt="Bild von Kanal in Utrecht">
                 <!-- https://pixabay.com/de/photos/utrecht-kanal-stra%C3%9Fe-gracht-4980165/ -->
-                <figcaption>Kanal in Utrecht (Quelle: <a href="https://pixabay.com/de/photos/utrecht-kanal-stra%C3%9Fe-gracht-4980165/">Pixabay</a>)</figcaption>
+                <figcaption><i class="fa-solid fa-camera-retro"> </i>Kanal in Utrecht (Quelle: <a href="https://pixabay.com/de/photos/utrecht-kanal-stra%C3%9Fe-gracht-4980165/">Pixabay</a>)</figcaption>
             </figure>
-            <h3>Übersichtskarte</h3>
-            <div id="map" style="width: 900px; height: 600px; border: 1px solid silver;"> </div>
-            <h3>Links</h3>
+            <h3><i class="fa-regular fa-map"></i> Übersichtskarte</h3>
+            <div id="map"> </div>
+            <h3><i class="fa-solid fa-link"> </i>Links</h3>
             <ul>
-                <li><a href="https://www.utrecht.nl/city-of-utrecht">Homepage der Stadt</a></li>
-                <li><a href="https://www.holland.com/de/tourist/entdecke-die-niederlande/entdecke-stadte/utrecht">Erlebnis-Tipps in Utrecht</a></li>
-                <li><a href="https://nijntjemuseum.nl/en/">Nijntjemuseum in Utrecht</a></li>
+                <li><a href="https://www.utrecht.nl/city-of-utrecht"> <i class="fa-regular fa-building"></i> Homepage der Stadt</a></li>
+                <li><a href="https://www.holland.com/de/tourist/entdecke-die-niederlande/entdecke-stadte/utrecht"><i class="fa-solid fa-binoculars"></i> Erlebnis-Tipps in Utrecht</a></li>
+                <li><a href="https://nijntjemuseum.nl/en/"><i class="fa-solid fa-landmark"></i> Nijntjemuseum in Utrecht</a></li>
             </ul>
         </article>
     </main>
 
     <footer>
         <nav>
-            <a href="https://basti-10.github.io/top/">vorhergehende Etappe</a>
-            <a href="https://jessimeteo.github.io/top/">diese Etappe</a>
-            <a href="https://vintiyannick.github.io/top/">nächste Etappe</a>
+            <a href="https://basti-10.github.io/top/"><i class="fa-solid fa-circle-left"></i></i> vorhergehende Etappe</a>
+            <a href="https://jessimeteo.github.io/top/"><i class="fa-solid fa-house"> </i>diese Etappe</a>
+            <a href="https://vintiyannick.github.io/top/">nächste Etappe <i class="fa-solid fa-circle-right"></i></a>
         </nav>
     </footer>
 
-    <!-- weil Java code und nicht html code
-     L. steht für Leaflet, View([long, lat], zoomfaktor)-->
-    <script>
-        var map = L.map('map').setView([52.088889, 5.115556], 13);
-        L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
-            maxZoom: 19,
-            attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
-        }).addTo(map);
-        var marker = L.marker([52.088889, 5.115556]).addTo(map);
-        marker.bindPopup("<b>Hello Utrecht!</b><br>I am a popup.").openPopup();
-    </script>
 </body>
 
 </html>
