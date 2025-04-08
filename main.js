@@ -216,6 +216,12 @@ L.control.layers({
     "Etappenmarker": overlay.marker,
 }).addTo(map);
 
+// Maßstab (Plug-in)
+// options mit {} einfügen und default-values beachten
+L.control.scale({
+    imperial: false
+}).addTo(map);
+
 // loop über Etappen
 for (let i = 0; i < STOPS.length; i++) {
     console.log(i, STOPS[i], STOPS[i].title);
